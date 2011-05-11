@@ -6,6 +6,7 @@ import ee.ignorance.transformiceapi.event.Event;
 import ee.ignorance.transformiceapi.event.EventService;
 import ee.ignorance.transformiceapi.protocol.client.RoomChatRequest;
 import ee.ignorance.transformiceapi.protocol.client.PrivateChatRequest;
+import ee.ignorance.transformiceapi.protocol.client.TribeChangeGreetingRequest;
 import ee.ignorance.transformiceapi.protocol.client.TribeChangeRankRequest;
 import ee.ignorance.transformiceapi.protocol.client.TribeChatRequest;
 import ee.ignorance.transformiceapi.protocol.client.CommandRequest;
@@ -404,8 +405,12 @@ public class PlayerImpl implements Player {
                 getConnection().sendRequest(new TribeListRequest());
         }
 
+        public void changeTribeGreeting(String message) {
+            	getConnection().sendRequest(new TribeChangeGreetingRequest(message));
+        }
+        
         public void changeTribeRank(String playerName, TribeRank rank) {
-            	getConnection().sendRequest(new TribeChangeRankRequest(playerName, rank));
+        	getConnection().sendRequest(new TribeChangeRankRequest(playerName, rank));
         }
         
         @Override

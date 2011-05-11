@@ -1,6 +1,8 @@
 package ee.ignorance.transformiceapi;
 
 import ee.ignorance.transformiceapi.event.Event;
+import ee.ignorance.transformiceapi.titles.TribeRank;
+
 import java.util.List;
 
 /**
@@ -87,5 +89,6 @@ public interface Player {
 
         void tribeList();
 
+        void changeTribeRank(String playerName, TribeRank rank);
         
 }

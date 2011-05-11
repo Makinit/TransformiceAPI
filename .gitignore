@@ -2,3 +2,4 @@ bin
 target
 .classpath
 .project
+/log4j-1.2.16.jar
