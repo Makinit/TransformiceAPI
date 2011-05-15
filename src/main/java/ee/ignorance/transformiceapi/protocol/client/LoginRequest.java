@@ -21,7 +21,8 @@ public class LoginRequest extends AbstractClientRequest {
                 bf.write(0x01);
                 bf.print(username);
                 bf.write(0x01);
-                bf.print(HashUtils.SHA256(password));
+                if (!password.isEmpty()) //empty password means login as guest
+                	bf.print(HashUtils.SHA256(password));
                 bf.write(0x01);
                 bf.write(0x31);
                 return bf.getBytes();
